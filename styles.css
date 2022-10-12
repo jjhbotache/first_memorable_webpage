@@ -1,0 +1,133 @@
+:root{
+    --primary:#e9c5d2;
+    --secondary:#460126;
+    --tertiary:#fcf8f4;
+    --nav-height: 8vh;
+}
+body{
+    background: var(--tertiary);
+    height: 100vh;
+}
+ul{
+    list-style-type: none;
+}
+
+#navbar{
+    z-index: 2;
+    position: relative;
+    background-color:var(--primary) !important;
+}
+#nav_row{
+    height: var(--nav-height);
+    overflow: hidden;
+}
+.active{
+    background: var(--tertiary) !important;
+}
+#navbar a{
+    color: var(--secondary);
+}
+#navbar li{
+    margin: auto 0;
+}
+#navbar svg{
+    height: var(--nav-height);
+}
+
+.col{
+    height:calc(100vh - var(--nav-height));
+}
+
+#rows,#side-rows1,#side-rows2 {
+    min-height: 33%;
+    transform: rotate(-20deg);
+    margin: 1vh -5em;
+}
+#side-rows1{
+    margin-top: calc(var(--slide-width)*-1);
+}
+#side-rows2{
+    margin-bottom: calc(var(--slide-width)*-1);
+}
+
+
+/* 1 2 3 1  */
+/* carousels */
+
+:root {
+    --no-of-slides: 2;
+    --slides-in-view: 3;
+    --slide-width: 200px;
+    --slide-height: 100%;
+    --iteration-time: 30s;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(var(--slide-width) * var(--no-of-slides)* -1));
+}
+}
+.continuous-carousel {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel__wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel__slide {
+    animation: scroll var(--iteration-time) linear infinite;
+    width: var(--slide-width);
+    height: var(--slide-height);
+}
+.continuous-carousel img{
+    height: auto;
+    width: var(--slide-width);    
+}
+
+/* --------------------------------------------------- */
+
+
+
+
+
+
+#r-side{
+    z-index: 1;
+    box-shadow: 0px 0px 30px 5px black;
+}
+@media all and (max-width:767px) {
+    #r-side{
+        height:calc(100vh - var(--nav-height));
+    }
+    
+}
+
+h1{
+font-size: 3em;
+color: var(--secondary);
+}
+#list{
+max-width: 45vw;
+}
+#list li{
+background: var(--primary);
+min-width: 7vw;
+min-height: 2.1vw;
+font-size: 1em;
+transition: transform 0.1s ease-out;
+}
+#list li:hover{
+transform: scale(1.4);
+}
+#list a{
+color: var(--secondary);
+text-decoration:none;
+}
